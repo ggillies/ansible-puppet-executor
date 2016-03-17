@@ -1,0 +1,4 @@
+---
+- include: modules/{{ puppet_executor_modules_install_method }}.yaml
+- include: populate-hieradata.yaml
+- include: run-puppet.yaml

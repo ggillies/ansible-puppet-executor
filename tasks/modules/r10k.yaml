@@ -1,0 +1,21 @@
+---
+- name: install dependencies needed for r10k
+  yum: name={{ item }}
+  with_items:
+    - git
+
+- name: install r10k from gem
+  gem:
+    name: r10k
+    user_install: no
+
+- name: download Puppetfile
+  get_url:
+    url: "{{ puppet_executor_modules_source }}"
+    dest: /etc/puppet/modules/puppetfile
+
+- name: deploy puppet modules
+  shell: /usr/local/bin/r10k puppetfile install -v
+  environment:
+    PUPPETFILE_DIR: /etc/puppet/modules
+    PUPPETFILE: /etc/puppet/modules/puppetfile

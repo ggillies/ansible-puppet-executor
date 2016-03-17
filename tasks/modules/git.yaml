@@ -1,0 +1,8 @@
+---
+- name: install git
+  yum: name={{ item }}
+  with_items:
+    - git
+
+- name: clone git repo into /etc/puppet/modules
+  git: repo={{ puppet_executor_modules_source }} dest=/etc/puppet/modules

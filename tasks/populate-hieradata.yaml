@@ -1,0 +1,3 @@
+---
+- name: populate hieradata hierachy with data from ansible inventory
+  template: src=hierafile.j2 dest=/var/lib/hiera/common.yaml

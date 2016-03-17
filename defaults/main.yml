@@ -1,0 +1,5 @@
+---
+puppet_executor_modules_install_method: local
+puppet_executor_modules_source: modules
+puppet_executor_classes: []
+puppet_executor_hieradata: {}

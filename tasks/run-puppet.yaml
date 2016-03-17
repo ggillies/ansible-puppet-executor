@@ -1,0 +1,6 @@
+---
+- name: create site.pp puppet manifest
+  copy: dest=/etc/puppet/site.pp content='hiera_include("classes")'
+
+- name: run puppet
+  puppet: manifest=/etc/puppet/site.pp
